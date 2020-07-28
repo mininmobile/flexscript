@@ -1,3 +1,4 @@
+const errors = require("./lib/errors.json");
 const interpreter = new (require("./lib/flexscript"))();
 
 let args = process.argv.splice(2);
@@ -34,11 +35,24 @@ if (args[0] == "--help" || args[0] == "-h") {
 	ask();
 
 	function ask() {
-		let rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+		let rl = readline.createInterface({
+			input: process.stdin,
+			output: process.stdout,
+		});
 
 		rl.question(colorize.blue("FS> "), (input) => {
 			rl.close();
-			interpreter.parseLine(input);
+
+			try {
+				interpreter.parseLine(input);
+			} catch (e) {
+				console.log(colorize.red([
+					"  -1 | " + input,
+					"       " + " ".repeat(e.dbgpos) + "~".repeat(e.dbglen),
+					"       " + e.msg,
+				].join("\n")));
+			}
+
 			ask();
 		});
 	}

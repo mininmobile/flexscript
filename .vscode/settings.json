@@ -1,5 +1,11 @@
 {
 	"cSpell.words": [
 		"flexscript"
+	],
+	"cSpell.ignoreWords": [
+		"contexti",
+		"dbglen",
+		"dbgpos",
+		"zvava"
 	]
 }
