@@ -1,4 +1,5 @@
 {
+	"UNKNOWN": -1,
 	"OK": 0,
 	"INVALID_COMMAND": 1
 }

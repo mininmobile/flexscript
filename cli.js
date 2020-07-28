@@ -1,4 +1,3 @@
-const errors = require("./lib/errors.json");
 const interpreter = new (require("./lib/flexscript"))();
 
 let args = process.argv.splice(2);
@@ -46,9 +45,12 @@ if (args[0] == "--help" || args[0] == "-h") {
 			try {
 				interpreter.parseLine(input);
 			} catch (e) {
+				let dbgpos = e.dbgpos || 0;
+				let dbglen = e.dbglen || 0;
+
 				console.log(colorize.red([
 					"  -1 | " + input,
-					"       " + " ".repeat(e.dbgpos) + "~".repeat(e.dbglen),
+					"       " + " ".repeat(dbgpos) + "~".repeat(dbglen),
 					"       " + e.msg,
 				].join("\n")));
 			}
