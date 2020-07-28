@@ -14,7 +14,7 @@ if (args[0] == "--help" || args[0] == "-h") {
 	let fs = require("fs");
 
 	// launch interpreter into file
-	fs.readFile(args[0], (err, data) => {
+	fs.readFile(args[0], "UTF-8", (err, data) => {
 		if (err)
 			throw new Error(err);
 
@@ -48,11 +48,15 @@ if (args[0] == "--help" || args[0] == "-h") {
 				let dbgpos = e.dbgpos || 0;
 				let dbglen = e.dbglen || 0;
 
-				console.log(colorize.red([
-					"  -1 | " + input,
-					"       " + " ".repeat(dbgpos) + "~".repeat(dbglen),
-					"       " + e.msg,
-				].join("\n")));
+				if (e.msg) {
+					console.log(colorize.red([
+						"  -1 | " + input,
+						"       " + " ".repeat(dbgpos) + "~".repeat(dbglen),
+						"       " + e.msg,
+					].join("\n")));
+				} else {
+					console.error("internal interpreter error; " + e);
+				}
 			}
 
 			ask();
