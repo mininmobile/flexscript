@@ -27,6 +27,7 @@ if (args[0] == "--help" || args[0] == "-h") {
 	let colorize = require("./lib/colorize");
 
 	// launch into interactive console
+	interpreter.debug = true;
 	interpreter.assign("exit", () => { process.exit(0) });
 
 	console.log("FLEXSCRIPT interactive console");
