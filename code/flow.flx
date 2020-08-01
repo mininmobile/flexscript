@@ -1,0 +1,13 @@
+echo this scripting
+goto A
+
+:B
+echo fr*cking epic.
+goto end
+
+:A asd asd
+echo is pretty
+goto B
+
+:end balls balls
+echo please have a good day :)

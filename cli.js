@@ -19,7 +19,7 @@ if (args[0] == "--help" || args[0] == "-h") {
 			throw new Error(err);
 
 		let meta = interpreter.process(data);
-		interpreter.parse(data, meta);
+		interpreter.parse(meta);
 	});
 } else {
 	// console-only imports
