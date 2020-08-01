@@ -2,10 +2,10 @@ const interpreter = new (require("./lib/flexscript"))();
 
 let args = process.argv.splice(2);
 
-if (args[0] == "--help" || args[0] == "-h") {
+if (args[0] == "--help" || args[0] == "-h" || args[0] == "/?") {
 	console.log([
 		"usage:",
-		"  -h --help\tshows this message",
+		"  /? -h --help\tshows this message",
 		"  [filepath]\tstart the interpreter",
 		"  [no args]\tstart interactive console",
 	].join("\n"));
@@ -25,6 +25,7 @@ if (args[0] == "--help" || args[0] == "-h") {
 	// console-only imports
 	let readline = require("readline");
 	let colorize = require("./lib/colorize");
+	let util = require("./lib/util");
 
 	// launch into interactive console
 	interpreter.debug = true;
@@ -46,18 +47,7 @@ if (args[0] == "--help" || args[0] == "-h") {
 			try {
 				interpreter.parseLine(input);
 			} catch (e) {
-				let dbgpos = e.dbgpos || 0;
-				let dbglen = e.dbglen || 0;
-
-				if (e.msg) {
-					console.log(colorize.red([
-						"  -1 | " + input,
-						"       " + " ".repeat(dbgpos) + "~".repeat(dbglen),
-						"       " + e.msg,
-					].join("\n")));
-				} else {
-					console.error("internal interpreter error; " + e);
-				}
+				util.logError(e);
 			}
 
 			ask();
