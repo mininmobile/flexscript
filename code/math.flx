@@ -1,3 +1,14 @@
-asd = asd
+// mathematical expressions are executed from left to right, no BIMDAS or any
+// of that bullshit - except for brackets.
+asd = 3
+echo {asd}
 asd /i = 3
-asd /i = 2 + 3
+echo {asd}
+asd /i = 2 + 2
+echo {asd}
+asd /i = 2 * 2 + 3
+echo {asd}
+asd /i = 2 * (2 + 3)
+echo {asd}
+asd /i = 2 ^ 2 + 8 / (4 * 4) + (4 / 16)
+echo {asd}
