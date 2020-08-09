@@ -1,2 +1,3 @@
+// prints "Hello, World!" to the terminal then pauses
 echo Hello, World!
 pause

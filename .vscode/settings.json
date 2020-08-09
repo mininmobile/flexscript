@@ -9,5 +9,6 @@
 		"dbglen",
 		"dbgpos",
 		"zvava"
-	]
+	],
+	"dimmer.enabled": false
 }

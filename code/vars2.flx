@@ -1,0 +1,22 @@
+// this will flip the interpreter debug flag to true meaning it will display
+// debug output, like when using the interactive console
+@debug on
+
+// this file will test special assignments
+a = 1
+
+// using the /i flag, it expects a mathematical expression like in math.flx
+a /i += 2
+a /i -= 6
+a /i /= 3
+a /i *= 10
+
+// not using the /i flag, these operations will perform string operations
+// this one will append to the end of the string
+a += 2
+// this will remove x amt of characters from the end of the string
+a -= 1
+// this will repeat the string x times
+a *= 3
+// this will throw an error
+a /= 3

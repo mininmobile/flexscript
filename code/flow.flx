@@ -1,3 +1,5 @@
+// this prints a sentence, un-jumbling it with labels and goto statements
+
 echo this scripting
 goto A
 
@@ -9,5 +11,5 @@ goto end
 echo is pretty
 goto B
 
-:end balls balls
+:end balls
 echo please have a good day :)

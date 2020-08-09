@@ -1,8 +1,11 @@
+// these should not work
 echo my {x} {a{x}} :)
 echo my \{x} {a{x}} :)
+// this should create three variables
 x = 3
 a3 = {x} balls
 a3b = EPIC
 aEPICb = nuts
+// this should work
 echo my {x} my {a{x}}, my big {a{x}b} {a{a{x}b}b} :)
 echo my \{x} {a{x}} :)
