@@ -35,9 +35,9 @@ if (args[0] == "--help" || args[0] == "-h" || args[0] == "/?") {
 	ask();
 
 	function ask() {
-		util.prompt(colorize.blue("FS> "), (input) => {
+		util.readline.question(colorize.blue("FS> "), async (input) => {
 			try {
-				interpreter.parseLine(input);
+				await interpreter.parseLine(input);
 			} catch (e) {
 				util.logError(e);
 			}
