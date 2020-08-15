@@ -13,3 +13,6 @@ goto B
 
 :end balls
 echo please have a good day :)
+
+// test with non-existent label
+goto cum
