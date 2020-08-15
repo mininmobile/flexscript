@@ -23,7 +23,6 @@ if (args[0] == "--help" || args[0] == "-h" || args[0] == "/?") {
 	});
 } else {
 	// console-only imports
-	let readline = require("readline");
 	let colorize = require("./lib/colorize");
 	let util = require("./lib/util");
 
@@ -36,14 +35,7 @@ if (args[0] == "--help" || args[0] == "-h" || args[0] == "/?") {
 	ask();
 
 	function ask() {
-		let rl = readline.createInterface({
-			input: process.stdin,
-			output: process.stdout,
-		});
-
-		rl.question(colorize.blue("FS> "), (input) => {
-			rl.close();
-
+		util.prompt(colorize.blue("FS> "), (input) => {
 			try {
 				interpreter.parseLine(input);
 			} catch (e) {
