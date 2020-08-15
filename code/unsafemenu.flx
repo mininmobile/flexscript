@@ -1,0 +1,31 @@
+:start
+clear
+echo
+echo Hello, this is menu. Please select an option:
+echo
+echo     1) say hello
+echo     2) say foob
+echo     3) say aaaaa
+echo
+echo     0) exit
+echo
+option <
+goto {option}
+
+:1
+echo hello
+pause
+goto start
+
+:2
+echo foob
+pause /s
+goto start
+
+:3
+echo aaaaa
+echo press key :)
+pause /s
+goto start
+
+:0
