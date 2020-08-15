@@ -4,7 +4,7 @@ echo
 echo Hello, this is menu. Please select an option:
 echo
 echo     1) say hello
-echo     2) say foob
+echo     2) say foo
 echo     3) say aaaaa
 echo
 echo     0) exit
@@ -18,7 +18,7 @@ pause
 goto start
 
 :2
-echo foob
+echo foo
 pause /s
 goto start
 
