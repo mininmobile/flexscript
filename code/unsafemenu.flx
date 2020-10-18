@@ -1,3 +1,6 @@
+// this is unsafe because it does not check if the label exists or not
+// the program will crash if you enter in an invalid option
+
 :start
 clear
 echo
